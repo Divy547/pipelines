@@ -205,11 +205,11 @@ class TestPipInstallSerialization(
         )
 
         # Use the original component that was failing
-        # Use numpy>=1.26.0 for Python 3.13 compatibility (has pre-built wheels)
+        # Use numpy>=1.26.0 for Python 3.12+ compatibility (has pre-built wheels)
         import sys
 
         numpy_version = (
-            'numpy>=1.26.0' if sys.version_info >= (3, 13) else 'numpy==1.24.3'
+            'numpy>=1.26.0' if sys.version_info >= (3, 12) else 'numpy==1.24.3'
         )
 
         @dsl.component(packages_to_install=[numpy_version])
